@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Struggles of Medical Residency Trainees</title>
+    <link rel="stylesheet" type="text/css" href="./css/style_whole.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+    <link href="./css/ratio.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/oneday.css">
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.2/velocity.ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.3.3/echarts.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/echarts-gl/2.0.6/echarts-gl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0/dist/chartjs-plugin-datalabels.min.js"></script>
+    <script src="./js/prefixfree.min.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <div id="navigation" class="navigation">
+        <div class="progressLine">
+            <div class="progressLine__fill"></div>
+        </div>
+        <div class="nav-item" data-section="1">Prologue</div>
+        <div class="nav-item" data-section="2">The Blade Beneath the Oath</div>
+        <div class="nav-item" data-section="3">“Am I a Student or a Doctor?”</div>
+        <div class="nav-item" data-section="4">A Cycle Without End</div>
+        <div class="nav-item" data-section="5">Dawn reaches the duty room</div>
+    </div>
+    <!-- 导航栏over -->
+
+    <!-- 人物介绍 -->
+    <div id="hint-avatar">
+        <p>▶When these individuals are mentioned in the article, their corresponding icons will light up. <br>
+            You can also hover over the icons at any time to view their profiles.▶</p>
+    </div>
+    <div class="avatar-container">
+        <div class="avatar"
+            data-tooltip="Zhu Jingping: A specialized master’s residency trainee. Zhu completed his undergraduate studies in his hometown of Hunan and is currently pursuing his master’s degree at Guangxi Medical University. Now in his third year of graduate school and nearing graduation, he aspires to become an excellent obstetrician-gynecologist in the future."
+            data-avatar="Zhu">
+            <img src="./image/profile/1.png" alt="朱景平">
+        </div>
+        <div class="avatar"
+            data-tooltip="Bingbing: After failing her first attempt at the postgraduate entrance exam, Bingbing chose to pursue a social residency program. However, due to the dual pressures of physical and mental strain, she left the program during her second year (2023). She is currently preparing for her second attempt at the exam, with the hope of becoming a university lecturer and leading a stable life."
+            data-avatar="Bing">
+            <img src="./image/profile/2.png" alt="饼饼">
+        </div>
+        <div class="avatar"
+            data-tooltip="Li Guang: A veteran of two residency programs, Li pursued a clinical master’s degree from 2011 to 2014 and later underwent social residency training in radiation therapy from 2019 to 2022. A firsthand witness to changes in the residency training system, he now works as an oncologist."
+            data-avatar="Li">
+            <img src="./image/profile/3.png" alt="李广">
+        </div>
+        <div class="avatar"
+            data-tooltip="Qian Xiao’ao: A social residency trainee who chose to study medicine due to family circumstances. Known for his frequent posts on medical student forums like DXY, Qian has now given up on becoming a doctor."
+            data-avatar="Qian">
+            <img src="./image/profile/4.png" alt="钱小獒">
+        </div>
+        <div class="avatar"
+            data-tooltip="Liu Jin: One of the pioneers of China’s standardized residency training system, Liu is a renowned clinical anesthesiology expert and the former director of the Anesthesia Surgery Center at West China Hospital, Sichuan University."
+            data-avatar="Liu">
+            <img src="./image/profile/5.png" alt="刘进">
+        </div>
+        <div class="avatar"
+            data-tooltip="Gao Yu: A specialized master’s residency trainee in obstetrics and gynecology from Zhejiang Province, aspiring to work in the pharmaceutical industry in the future."
+            data-avatar="Gao">
+            <img src="./image/profile/6.png" alt="高雨">
+        </div>
+    </div>
+
+    <!-- 引子 -->
+    <section id="section1" class="section">
+        <!-- 封面 规培生之困 -->
+        <div id="cover-whole" class="avatar-invisible-trigger">
+            <div id="cover-slide1" class="cover-slide-show fade-transition">
+                <div id="cover-img1" class="cover-img fade-transition">
+                </div>
+            </div>
+            <div id="suicide-slide" class="cover-slide-show fade-transition">
+                <div id="door-slide" class="cover-slide-show">
+                    <div id="door-img" class="cover-img fade-transition"></div>
+                </div>
+                <div id="text-slide" class="cover-slide-show">
+                    <div id="text-introduction">
+                        <p class="introduction fade-transition" id="introduction1">On February 24, 2024, </p>
+                        <p class="introduction fade-transition" id="introduction2"> a medical resident, Cao Liping, at
+                            Hunan Provincial People’s Hospital,</p>
+                        <p class="introduction fade-transition" id="introduction3">ended her life by slitting her
+                            throat, overwhelmed by immense pressure.</p>
+                        <p class="introduction fade-transition" id="introduction4">In her final words, she expressed her
+                            despair:</p>
+                        <div id="phone" class="cover-img avatar-invisible-trigger"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="content1" class="content">
+            <div id="pinned1" class="pinned">
+                <p style="width: max-content;">This was not the only suicide among medical trainees in 2024.</p>
+                <img src="./image/news_suicide/newspaper.png" alt="" id="suicide-news" class="fade-in illustration">
+            </div>
+            <div id="suicide-news-text">
+                <p>
+                    <span class="quote">“I’ve grown used to it.”</span>
+                    <br>
+                    <br>Upon reading yet another report of a medical trainee’s suicide on her phone, <span
+                        class="people-Bing people"></span> Bingbing, </span>a former trainee who voluntarily left her
+                    program, could only muster this thought.
+                    <br>
+                    <br>At that time,<span class="people-Bing people">Bingbing</span> had just received her preliminary
+                    results for her second attempt at the graduate school entrance exam and was preparing for the
+                    upcoming interviews. Although her scores weren’t ideal, and she faced the possibility of
+                    transferring to a different program, Bingbing felt relieved about her decision to leave the
+                    residency program and pursue further studies. It was a chance to return to campus life. She hoped
+                    that after graduation, she might find a teaching position at a university and finally enjoy a
+                    regular workweek with weekends off.
+                    <br>
+                    <br>While the public was shocked by the occurrence of four trainee suicides in just one month, <span
+                        class="people-Bing people">Bingbing </span>found it unsurprising. She had considered quitting
+                    within the first three months of her training—and had even contemplated suicide at one point. After
+                    two grueling years, she finally decided to end her suffering and leave the program.
+                    <br>
+                    <br>In China,
+                    <span>medical students must complete five years of undergraduate education, followed by three years
+                        of standardized residency training and an additional two to four years of specialized training
+                        before they can officially become specialists. This system, known as “standardized residency
+                        training” (commonly abbreviated as “residency”),</span> is an unavoidable step for medical
+                    students on their journey to becoming licensed doctors.
+                    <br>
+                    <br>Each department rotation in the residency program lasts three months. For many trainees, the
+                    first rotation is often the most shocking and overwhelming experience. Research tracking the mental
+                    health of medical trainees revealed that
+                    <span>
+                        at the beginning of residency, 9.1% of Chinese trainees met the diagnostic criteria for
+                        depression. After three months, this figure surged to 21.1%, before the rate of increase slowed.
+                    </span>
+                    <br>
+                    <br>
+                    <span>
+                        Overall, 35.1% of participants exhibited signs of severe depression within their first year of
+                        residency.
+                    </span>
+                    <br>
+                    <br>
+                </p>
+                <div class="chart" style="padding-top: 20px;">
+                    <div class="chart-title">
+                        Depression Rates Among Trainees at Various Stages of Residency Training
+                    </div>
+                    <div id="main_depression_one_year" class="chart fade-in">
+                    </div>
+                    <div class="data-source">
+                        <p>
+                            Data Source：Lihong Chen et al.,"Prevalence and risk factors for depression among training
+                            physicians in
+                            China and the United States"
+                        </p>
+                    </div>
+                </div>
+                <p style="margin-top:100px; margin-bottom: 30px;">
+                    Among all medical trainees, those in specialized master’s residency programs face the greatest
+                    pressure, as they must juggle clinical training, academic studies, and research simultaneously. Cao
+                    Liping was part of this category.
+                </p>
+                <div id="resident-explanation" class="chart">
+                    <div id="resident1" class="resident-type"></div>
+                    <div id="resident2" class="resident-type"></div>
+                    <div id="resident3" class="resident-type"></div>
+                </div>
+                <p>
+                    A study conducted at Xiangya Hospital of Central South University compared depression and perceived
+                    stress levels between SMR residents and social residents.
+                    <span>It found that 63.0% of SMR residents experienced depression, 8.3% higher than social
+                        residents.</span> Additionally, 68.9% of SMR residents reported elevated levels of
+                    <span class="tooltip">perceived stress
+                        <span class="tooltiptext">This refers to an individual’s assessment of the severity of threats
+                            from stressors and their ability to cope with these threats. While moderate stress can be
+                            beneficial for maintaining physical and mental health and adapting to the environment,
+                            excessive stress has detrimental effects.</span>
+                    </span>. The primary source of stress was academic work (85.1%), followed by research and employment
+                    concerns.
+                    <br>
+                    <br>
+                </p>
+                <div class="chart" style="padding-top: 20px;">
+                    <div class="chart-title">
+                        Depression Rates Among SMR Residents in China
+                    </div>
+                    <div class="hint">
+                        （Hover for detailed information▶）
+                    </div>
+                    <div id="depression-different-type" class="chart">
+                        <div id="double_pie_container">
+                            <div id="initialChartContainer">
+                                <canvas id="initialChart"></canvas>
+                            </div>
+                            <div id="detailedChartContainer">
+                                <canvas id="detailedChart" class="chart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-source">
+                        <p>
+                            Source: Zhu Xiaoyan et al., “Depressive Symptoms and Perceived Stress Among Residents Under
+                            the Dual-Track Training Model.”
+                        </p>
+                    </div>
+                </div>
+
+                <p style="margin-top:100px;">
+                    Since the residency system was formally launched in 2014, China has established over 1,100
+                    national-level training centers and more than 11,000 specialized training bases, enrolling a total
+                    of 1.07 million trainees. Within the vast ocean of tertiary hospitals, some trainees have
+                    successfully obtained their certifications and secured jobs, while others have chosen to exit and
+                    explore alternative career paths. Tragically, some remain forever trapped in this system.
+                    <span>A decade
+                        has passed since the inception of the residency program. How much of its original vision remains
+                        intact? For the thousands of trainees on the verge of completing their training, how will they
+                        reflect on their fate?</span>
+                </p>
+            </div>
+        </div>
+
+    </section>
+    <!-- 引子over -->
+
+    <!-- 第一章 誓言下的自刎 -->
+    <section id="section2" class="section">
+        <div id="cover-slide2" class="cover-slide fade-transition avatar-invisible-trigger">
+            <div id="cover-img2" class="cover-img"></div>
+        </div>
+        <div id="newspaper-background">
+            <img src="./image/newspaper.png" alt="新闻剪报">
+        </div>
+        <div id="content2" class="content">
+            <p>When entering university, all medical students take a solemn oath:
+            </p>
+            <p id="promise">
+                I pledge my dedication to health and entrust my life to this noble cause. Upon entering the sacred halls
+                of medicine, I solemnly swear: I am willing to devote myself to medicine, love my country, and remain
+                loyal to the people. I will uphold medical ethics, respect my teachers, adhere to discipline, work
+                diligently, persevere tirelessly, strive for excellence, and pursue holistic development. I am
+                determined to do my utmost to alleviate human suffering, promote health, and safeguard the sanctity and
+                honor of medical practice. I vow to save lives, endure hardships, and persistently pursue the
+                advancement of China’s medical and health undertakings, and the physical and mental well-being of
+                humanity for the rest of my life!
+            </p>
+            <p>
+                <br> A study analyzing patient-doctor relationship reports published in People’s Daily since the
+                founding of the People’s Republic of China found that
+                <span>45.84% of these reports focused on portraying doctors in a positive
+                    light</span>, emphasizing qualities such as “caring for patients,” “selflessness,” “high moral
+                character,” and “fearlessness in adversity,” presenting them as “angels in white.” Meanwhile,
+                <span>29.99% of the reports highlighted the challenges faced by
+                    doctors</span>, including “lack of safety guarantees,” “violence against medical staff,” and “poor
+                compensation.”
+                <br>
+                <br>
+            </p>
+            <div class="chart" style="padding-top: 20px; height: max-content;">
+                <div class="chart-title">Media Portrayals of Doctors</div>
+                <div id="wordcloud" class="chart">
+                    <div id="wordcloud-img1" class="wordcloud-img">
+                        <div class="wordcloud-text">
+                            Negative Image
+                        </div>
+                    </div>
+                    <div id="wordcloud-img2" class="wordcloud-img">
+                        <div class="wordcloud-text">
+                            Neutral Image
+                        </div>
+                    </div>
+                    <div id="wordcloud-img3" class="wordcloud-img">
+                        <div class="wordcloud-text">
+                            Positive Image
+                        </div>
+                    </div>
+                </div>
+                <div class="data-source" id="wordcloud-info">
+                    <p>
+                        Note: Data sourced from relevant reports in People’s Daily since the founding of the PRC.
+                    </p>
+                </div>
+            </div>
+
+            <p style="margin-top: 130px;">
+                It can be said that, whether in terms of self-expectation or societal evaluation, most medical students
+                and doctors strive to embody the image of “angels in white” who save lives and heal the wounded.
+                <br>
+                <br> So why would hands trained to save lives turn against themselves?
+                <br>
+                <br>
+                <span class="people-Zhu people">Zhu Jingping</span>, a specialized master’s medical trainee in the
+                obstetrics and gynecology department of a hospital in Guangxi, was nearing the completion of his
+                three-year residency. From his own experience, there is a stark hierarchy within the medical profession.
+                <span>If one were to visualize the power structure of a hospital as a pyramid, trainees like Zhu are not
+                    only at the base of the pyramid but also at its very fringes. </span>For trainees stepping out of
+                the ivory tower, this reality is often brutal.
+                <br>
+                <br> The first time <span class="people-Zhu people">Zhu</span>heard a hospital nurse hurling
+                “ridiculous”
+                personal insults at him, his immediate reaction was to “endure it.” In front of a pregnant patient, the
+                nurse ridiculed him and his fellow postgraduate trainees, saying, “You’re just a bunch of country
+                bumpkins, complete amateurs who know nothing.” Even though Zhu knew the nurse lacked the qualifications
+                to make such remarks, he and other trainees never argued back. “I had no choice; I needed to graduate.
+                If I resisted and couldn’t graduate because of it, wouldn’t these three years be wasted?”
+                <br>
+                <br>
+                <span>For trainees, the cost of leaving the program is enormous.</span>
+                <br>
+                <br> The year the residency system was fully launched also marked the introduction of the “dual-track
+                integration” model, which essentially combines postgraduate studies and residency training. While this
+                approach saves three years in the long term, it comes with a major trade-off: SMR trainees who fail to
+                obtain their residency certificate cannot graduate with a master’s degree or practice medicine.
+                <br>
+                <br>
+            </p>
+            <p>In China, becoming a certified doctor requires at least eight years of education and training, starting
+                from undergraduate studies.
+                <br>
+                <br>
+            </p>
+            <div class="chart" style="padding-top: 20px; height: auto; margin-bottom: 0;">
+                <div class="chart-title">
+                    How Do Medical Students Become Doctors in China?
+                </div>
+                <div id="how-to-be-a-doctor" class="chart">
+                    <img src="./image/be_a_doctor_in_china/doctor_route.png" alt="">
+                </div>
+            </div>
+            <p>
+                <span>Once a medical student leaves a residency program, not only can they no longer become a certified
+                    doctor, but the years they’ve spent studying medicine become a waste of time—an effort in vain.
+                    Beyond that, students who withdraw from residency must also return all wages and government
+                    subsidies they received during the program and are barred from re-entering residency for the next
+                    three years.</span>
+                <br>
+                <br>The medical field is vastly different from other professions. To <span class="people-Zhu people">Zhu
+                    Jingping</span>, leaving a residency program is nearly synonymous with switching careers. “It’s like
+                I have no survival skills in society,” he said. “I’d have to depend on my parents again. To put it
+                bluntly, how is that any different from just letting me die?”
+                <br>
+                <br>For <span class="people-Li people">Li Guang</span>, now a practicing oncologist, this sentiment also
+                resonates deeply. Reflecting on his grueling 15-year journey in medicine, he remarked, “The entire
+                medical profession is built on discipline.”
+                <span>The system actively filters people, leaving behind those who have been shaped into professionals
+                    with qualities such as precision, attentiveness, and caution. However, compliance and endurance also
+                    take root in these individuals, growing stronger under the system’s demands, making resistance
+                    nearly impossible. </span> “These traits are essential for doctors, but this system exploits them,
+                which I find deeply unsettling and revolting,” Li said.
+                <br>
+                <br>
+            </p>
+        </div>
+    </section>
+    <!-- 第一章over -->
+
+    <!-- 第二章 我是学生，还是医生？ -->
+    <section id="section3" class="section">
+        <div id="cover-slide3" class="cover-slide fade-transition avatar-invisible-trigger">
+            <div id="cover-img3" class="cover-img"></div>
+        </div>
+        <div id="content3" class="content">
+            <p>
+                In the long and arduous journey of medical training, the role of a “resident trainee” has become one of
+                the most complex and ambiguous identities.
+                <br>
+                <br>
+                <span>The word “trainee” (规培生) in Chinese contains the character “生,” which can mean both “student” and
+                    “doctor.” </span> This duality and ambiguity in its literal meaning also reflect the reality of the
+                trainee’s role: “When it comes to salary, they say you’re here to learn; when it comes to workload, they
+                say you’re here to work. Essentially, you do the most work for the least pay,” said <span
+                    class="people-Bing people">Bingbing</span>
+                <br>
+                <br> In 2020, the medical platform DXY conducted a survey of 3,023 doctors who had undergone residency
+                training. The results showed that trainees in the social residency program earned the highest income,
+                with an average monthly salary exceeding 3,000 yuan. Those in the sponsored residency program ranked
+                second, earning an average monthly stipend between 2,000 and 2,999 yuan.
+                <span>Specialized master’s residency trainees earned the least, with average monthly stipends below
+                    1,000 yuan—and 20% of them received no income at all.</span>
+                <br>
+                <br>
+            </p>
+            <div class="chart" style="padding-top: 10px; height: max-content;">
+                <div class="chart-title">
+                    Monthly Salary Distribution of Trainees
+                </div>
+                <div id="income-box" class="chart">
+                    <div id="double_chart_container">
+                        <div id="initialChartContainer1">
+                            <canvas id="initialChart2"></canvas>
+                        </div>
+                        <div id="detailedChartContainer1">
+                            <canvas id="detailedChart2" class="chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="hint">
+                    （Hover for more details▶）
+                </div>
+                <div class=" data-source" style="top: 90%;">
+                    <p>Data Source: Dingxiangyuan</p>
+                </div>
+            </div>
+
+            <p>
+                <span class="people-Liu people">Liu
+                    Jin,</span> a renowned clinical anesthesiology expert and one of the initiators of China’s residency
+                training system, explained in an interview that specialized master’s trainees are full-time
+                postgraduate students throughout their training. During the 33 months of residency, they are not
+                eligible for financial subsidies from the government or hospitals. “Government subsidies are
+                allocated based on the number of trainees registered under the residency system governed by the
+                National Health Commission (NHC), at 30,000 yuan per person per year. Since specialized master’s
+                trainees belong to the Ministry of Education’s system and not the NHC’s residency system, they do
+                not receive this funding,” Liu said.
+                <br>
+                <br>
+                <span>Despite earning far less than full-fledged doctors, resident trainees endure extraordinary
+                    workloads.</span>
+                <br>
+                <br> Since beginning his residency, <span class="people-Zhu people">Zhu Jingping
+                </span>has not returned to his hometown in Hunan to celebrate Chinese New Year in three years. “Two
+                New Year’s Eves, I was on duty. The other time, I was on shift on the first day of the new year,” he
+                said. Zhu attends to more than 100 patients daily, sometimes as few as 70 on a less busy day. During
+                his shifts, he often works continuously for 48 hours.
+                <br>
+                <br>
+                <span class="quote">“It’s especially exhausting during rotations in obstetrics,”</span><span
+                    class="people-Zhu people"> Zhu </span>said.<span class="quote">“There’s often no rest throughout
+                    the night. Because there’s always the risk of maternal or fetal death, even when you’re utterly
+                    exhausted, you must stay alert. You never know what kind of patient will come in next—sudden
+                    amniotic fluid rupture, an imminent miscarriage requiring emergency intervention, or worse,
+                    massive hemorrhaging or intrauterine fetal death. Sometimes, these situations happen
+                    simultaneously.”</span>
+                <br>
+                <br> Survey results show that more than half of the resident trainees reported working over 8 hours
+                daily on average. Furthermore, 94.6% of them slept fewer than 8 hours per day, and 5.4% stated they
+                got less than 4 hours of sleep each day.
+                <br>
+                <br> According to World Health Organization data, each doctor in China serves approximately 419
+                people.
+                <span>This shortage of medical personnel is a persistent reality in many Chinese hospitals.</span>
+                <br>
+                <br>
+            </p>
+            <div class="chart" style="padding-top: 10px; height: max-content; margin-bottom: 0;">
+                <div class="chart-title">
+                    Doctor-to-Population Ratios in the Top 6 GDP Countries
+                </div>
+                <div id="doctor-number-img" class="chart">
+                    <div id="ratio-container">
+                        <div class="country-group" id="china">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/china-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/china.png" alt="中国" class="flag"
+                                data-info="In China, each doctor serves an average of 419 patients.">
+                        </div>
+                        <div class="country-group" id="japan">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/japan-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/japan.jpg" alt="日本" class="flag"
+                                data-info="In Japan, each doctor serves an average of 383 patients.">
+                        </div>
+                        <div class="country-group" id="uk">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/uk-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/uk.jpg" alt="英国" class="flag"
+                                data-info="In UK, each doctor serves an average of 316 patients.">
+                        </div>
+                        <div class="country-group" id="france">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/france-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/france.png" alt="法国" class="flag"
+                                data-info="In French, each doctor serves an average of 301 patients.">
+                        </div>
+                        <div class="country-group" id="usa">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/usa-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/usa.png" alt="美国" class="flag"
+                                data-info="In America, each doctor serves an average of 202 patients.">
+                        </div>
+
+                        <div class="country-group" id="korea">
+                            <div class="doctor" style="background-image: url('./image/doctor_ratio/korea-ratio.png');">
+                            </div>
+                            <img src="./image/doctor_ratio/korea.jpg" alt="德国" class="flag"
+                                data-info="In Germany, each doctor serves an average of 221 patients.">
+                        </div>
+
+                    </div>
+                    <div id="info" class="info-box"></div>
+                </div>
+                <div class="hint" id="hint3">
+                    （Hover for detailed information▶）
+                </div>
+                <div class="data-source" id="doctor-number-info">
+                    <p>
+                        Note: Countries without residency training systems are excluded.
+                    </p>
+                </div>
+                <div class="data-source" id="doctor-number-img-data-source">
+                    <p>
+                        Data Source: World Health Organization
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top: 100px;">
+                <span class="people-Zhu people">Zhu Jingping</span> acknowledges the professional growth he has achieved
+                through residency training. “With such high-intensity work, it’s impossible not to gain something,” he
+                said confidently. “But whether your effort and gains are proportional is another matter entirely.” Each
+                year, Zhu receives a government subsidy of 6,000 yuan, distributed over 10 months. Along with some
+                modest “hardship allowances” for night shifts, he takes home about 1,000 yuan a month. “Every month, I
+                still have to ask my family for money,” he said.
+                <br>
+                <br> What frustrates
+                <span class="people-Zhu people">Zhu</span> more than the salary itself is the hospital’s attitude toward
+                resident trainees.
+                <span>Specialized master’s residents do not have independent employee IDs in the hospital system, are
+                    not considered formal staff, and are ineligible for departmental performance-based bonuses.
+                    Additionally, they cannot log overtime hours into the hospital’s system, making them ineligible for
+                    overtime pay or compensatory leave. </span>“We do more work than the hospital’s full-time doctors,
+                so
+                why are we paid the least?” Zhu feels this is deeply unfair but also resigned to the situation. “They
+                just see resident trainees as disposable, as tools for getting work done.”
+            </p>
+        </div>
+        </div>
+    </section>
+    <!-- 第二章over -->
+
+    <!-- 第三章 明日复明日 -->
+    <section id="section4" class="section">
+        <div id="cover-slide4" class="cover-slide fade-transition avatar-invisible-trigger">
+            <div id="cover-img4" class="cover-img"></div>
+        </div>
+        <div id="content4" class="content">
+            <p>
+                In 2021,<span class="people-Bing people"> Bingbing
+                </span>failed the postgraduate entrance exam. To align with her ex-boyfriend, a specialized master’s
+                resident, she chose to join a social residency program. Two years later, Bingbing decided to leave the
+                program, despite many advising her that “residency opportunities are hard to come by; just endure it,
+                and it’ll be over soon.”
+                <br>
+                <br> During her residency,
+                <span class="people-Bing people"> Bingbing's
+                </span>day began at 8:00 a.m. She would take over from the night-shift colleagues, then start her
+                clinical duties and rounds. She would examine half the patients herself, while the remaining ones were
+                seen during professor-led rounds. Her official afternoon shift started at 2:30 p.m., during which she
+                admitted new patients, ordered tests, wrote prescriptions, and double-checked everything to ensure no
+                further tests were required. Theoretically, she could leave work once all this was done. However,
+                interruptions were inevitable. “Nurses would come to find you, patients would seek you out, and your
+                superiors would assign more tasks. It’s impossible to focus entirely on one thing while working,” she
+                said.
+            </p>
+        </div>
+        <div id="oneday">
+            <div class="hint" id="hint4">
+                (Click the button to switch workday types, and drag the slider to view different time periods.)
+            </div>
+            <p id="oneday-text">
+                This was an all-too-typical day for a medical trainee.
+            </p>
+            <div id="oneday-chart" class="chart avatar-invisible-trigger">
+                <div class="container">
+                    <!-- 滑杆 ;以1作为步长，增加时间-->
+                    <input type="range" id="bingbing" min="0" max="24" value="0" step="1"
+                        oninput="updateTime(this.value)">
+                    <input type="range" id="gaoyu" min="0" max="24" value="0" step="1" oninput="updateTime(this.value)">
+                    <input type="range" id="zhujingping" min="0" max="24" value="0" step="1"
+                        oninput="updateTime(this.value)">
+                    <div id="value-box">
+                        <div class="value">TIME</div>
+                    </div>
+                    <div class="button">
+                        <button onclick="showSlider('bingbing'); buttonPressed(this)">Regular Day: Bingbing</button>
+                        <button onclick="showSlider('gaoyu'); buttonPressed(this)">Surgery Day: Gao Yu
+                        </button>
+                        <button onclick="showSlider('zhujingping'); buttonPressed(this)">On-call Day: Zhu Jingping
+                        </button>
+                    </div>
+                    <div id="map"></div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        <div id="content7" class="content">
+            <p>“I felt utterly drained—physical exhaustion can be endured, but the mental fatigue was overwhelming,”
+                <span class="people-Bing people"> Bingbing</span> said.
+                <br>
+                <br> A study published in Nature explored potential factors contributing to depression among medical
+                trainees. It found that
+                <span> “long working hours” and “insufficient sleep” were significant factors in both China and the U.S.
+                    However, two additional factors—“age” and “fear of workplace violence”—stood out as unique
+                    contributors for Chinese medical trainees.</span>
+                <br>
+                <br>
+                <span class="people-Bing people">Bingbing </span> recalled her initial experience at the residency
+                hospital: “When you don’t understand something and ask for help, what you get in return isn’t an
+                answer—it’s ridicule and personal attacks.” She had completed her undergraduate studies at a mid-tier
+                university and was working at a prestigious hospital for the first time during her residency. It shook
+                her confidence. “I thought this was just how top-tier professionals behaved,” she said. Later, with the
+                help of supportive mentors and colleagues, she discovered that this particular department was notorious
+                for complaints from both trainees and visiting doctors.
+            </p>
+        </div>
+        <div id="nightmare-slide" class="avatar-invisible-trigger">
+            <div id="nightmare">
+                <video src="./image/dream-texture.mp4" id="background-video" class="avatar-invisible-trigger"></video>
+            </div>
+            <div id="nightmare-textbox">
+                <p id="nightmare-text1" class="nightmare-text">
+                    The three months of isolation and helplessness left a deep mark on <span
+                        class="people-Bing people">Bingbing.</span></p>
+                <p id="nightmare-text2" class="nightmare-text">
+                    “During that time, I would wake up four times a night.”
+                </p>
+                <p id="nightmare-text3" class="nightmare-text">“I’d go to bed around 11 p.m.,”</p>
+                <p id="nightmare-text4" class="nightmare-text">“wake up at midnight,”</p>
+                <p id="nightmare-text5" class="nightmare-text">“then again at 3 a.m.,”</p>
+                <p id="nightmare-text6" class="nightmare-text">“6 a.m.”</p>
+                <p id="nightmare-text7" class="nightmare-text">“and 7 a.m.”</p>
+                <p id="nightmare-text8" class="nightmare-text">“The last time, I’d stay awake because it was time to get
+                    up.”</p>
+                <p id="nightmare-text9" class="nightmare-text">“Each time I woke up, I’d think about what I hadn’t done
+                    well at work and how I’d be scolded by the attending doctor.”
+                </p>
+            </div>
+        </div>
+        <div id="content5" class="content">
+            <p>
+                At one point, <span class="people-Bing people">Bingbing </span><span class="quote">changed
+                    her WeChat profile picture to a solid black image. “I thought, I want to die in this department and
+                    use my blood to awaken the attending doctor’s conscience.”</span>
+                <br>
+                <br> A 2023 study by Jinxingyi Wang and colleagues categorized suicidal behaviors into three levels of
+                severity: <span class="tooltip">suicidal ideation
+                    <span class="tooltiptext">Thoughts about ending one’s life without taking any action.
+                    </span>
+                </span>, <span class="tooltip">suicide planning
+                    <span class="tooltiptext">Developing specific plans, such as methods, timing, and location, or
+                        preparing for suicide.
+                    </span>
+                </span>, and <span class="tooltip">suicide attempts
+                    <span class="tooltiptext">
+                        Acting on suicidal thoughts but not resulting in death.
+                    </span>
+                </span>. Among Chinese medical students, the prevalence rates of these behaviors were 13%, 4%, and 3%,
+                respectively.Compared to doctors globally, Chinese medical students reported a lower prevalence of
+                suicidal ideation but a higher prevalence of suicide attempts. This suggests that Chinese medical
+                students are more likely to act on suicidal thoughts and turn them into concrete actions.
+                <br>
+                <br> According to scholar Wu Zhixin, suicide attempts can be seen as chronic protests: “I’ll show you
+                what happens if I die—my suicide is an act of resistance.”
+            </p>
+            <!-- <div id="anxiety-chart" class="chart">焦虑抑郁占位符</div> -->
+            <p>
+                <span class="people-Li people">Li Guang, </span>who has undergone two separate residency programs over
+                the span of five years, embodies this sentiment. His first residency, completed in 2014, occurred before
+                the residency system was fully implemented. “Back then, we followed the same requirements, but we didn’t
+                receive a residency certificate,” he explained. After completing his PhD, he transitioned from surgery
+                to radiation therapy and embarked on a second, full three-year residency. With six years of residency
+                experience, Li realized that
+                <span> trainees at the margins of the system’s hierarchy “have no leverage to negotiate
+                    anything.”</span> Even equal dialogue is nearly impossible, let alone contesting authority. From
+                this perspective, suicide may be seen as one way for trainees to escape their confinement.
+                <br>
+                <br> Currently,
+                <span>the Chinese Medical Doctor Association oversees residency programs primarily through top-down
+                    inspections.</span> The National Health Commission (NHC) entrusts the association to conduct random
+                evaluations of training bases across the country, focusing on base management, training quality, and
+                welfare protections. However, when faced with unfair treatment, trainees have little recourse other than
+                to report the issue and wait for higher authorities to address it. Protecting one’s own rights in such a
+                system is a significant challenge.
+                <br>
+                <br> Ultimately,
+                <span class="people-Bing people">Bingbing </span>chose to temporarily exit the system. She decided to
+                retake the postgraduate entrance exam in pursuit of her dream of becoming a university lecturer. “In my
+                field, a bachelor’s degree is just the starting point. To have any room for growth, you must pursue a
+                master’s or a doctorate,” she said. She thought,
+                <span> the difficult journey of medical students is par for the course.</span>
+            </p>
+        </div>
+        <div id="choice-slide">
+            <div id="choice-img-slide">
+                <div id="choice-img">
+                    <div id="stair1" class="stair"></div>
+                    <div id="stair2" class="stair"></div>
+                    <div id="stair3" class="stair"></div>
+                    <div id="stair4" class="stair"></div>
+                </div>
+                <div id="choice-textbox">
+                    <div id="choice1" class="choice-text">
+                        <p class="choice-content">
+                            “I have a senior who graduated with a PhD from Shanghai Jiao Tong University. Even after
+                            completing a three-year academic master’s program, he still had to do a residency. So, he
+                            suggested I consider becoming a researcher after my studies. It would offer more
+                            opportunities.”
+                            <br>
+                            <br> “Another senior who completed her academic master’s program went to a university and
+                            <span>started as a teaching assistant. She gets off work at 5 p.m. and has weekends off. I
+                                feel like her quality of life is much higher</span>.”
+                        </p>
+                        <p class="quote-name">——<span class="people-Bing people"> Bingbing </span>(Social Residency
+                            Dropout)</p>
+                    </div>
+                    <div id="choice2" class="choice-text">
+                        <p class="choice-content">
+                            “Residency training, medical insurance reform, and the current healthcare environment are
+                            all reasons why people like me are leaving the field. But I blame residency as the main
+                            culprit that pushed me to this decision. It’s like heart failure—not necessarily caused by
+                            an infection, but an infection can certainly trigger it.”
+                            <br>
+                            <br> “I plan to move to my girlfriend’s hometown in Shaanxi. I’m thinking of working at
+                            <span>a dialysis center, hospice care facility, health screening center, or a community
+                                hospital. I don’t want to work on the front lines
+                                anymore.</span> In those places, there’s less interaction with strangers—I can just work
+                            without needing to talk. That sounds good to me.”
+                        </p>
+                        <p class="quote-name">——<span class="people-Qian people">Qian Xiao’ao</span>(Second-Year
+                            Internal Medicine Social Residency Trainee)</p>
+                    </div>
+                    <div id="choice3" class="choice-text">
+                        <p class="choice-content">
+                            “During my first year as a graduate student, I really loved medicine, even though it was
+                            exhausting. But over time, I began to feel that some doctors—or perhaps the entire
+                            healthcare system—prioritize hospital profits over saving lives.I feel like I’ve lost my
+                            original passion for becoming a doctor. In the future,
+                            <span>I might shift to a pharmaceutical-related field instead</span>.”
+                        </p>
+                        <p class="quote-name">——<span class="people-Gao people"> Gao Yu </span>(Third-Year Specialized
+                            Master’s Residency Trainee, Obstetrics and Gynecology)</p>
+                    </div>
+                    <div id="choice4" class="choice-text">
+                        <p class="choice-content">
+                            “I used to dream big—I wanted to become a top doctor, a renowned expert. Now, I just want to
+                            lie flat and take it easy. I finally chose a tertiary hospital in a tourist city. Maybe
+                            being in that environment will help heal my spirit. But I know that the harm inflicted on me
+                            during these three years of graduate training may take a lifetime to recover from.”
+                            <br>
+                            <br> “I can’t keep living like this.
+                            <span> I’ve decided to find a less demanding job and work at a smaller platform as a
+                                doctor</span>.”
+                        </p>
+                        <p class="quote-name">——<span class="people-Zhu people"> Zhu Jingping </span>(Third-Year
+                            Specialized Master’s Residency Trainee, Obstetrics and Gynecology)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content5" class="content">
+            <p>
+                The first time <span class="people-Zhu people">Zhu Jingping </span>served as a surgical assistant, his
+                lack of experience slowed the procedure. The chief surgeon berated him openly: “Did you even go to
+                school? Should you go back and redo your undergraduate degree? I don’t even think you have hands. If I
+                were your parents, I’d regret giving birth to you.” The chief’s frequent verbal abuse left a lasting
+                shadow over Zhu. “Every night, I’d wake up from nightmares of him scolding me. I lost 10 pounds that
+                month.” Residency felt like a transparent prison; Zhu rarely left the neighborhood around the hospital.
+                At times, he resented his family for pushing him into studying medicine in the first place.
+                <br>
+                <br> During his second year of residency,
+                <span class="people-Zhu people"> Zhu's
+                </span> mother was in a car accident and ended up in the ICU. He signed multiple critical condition
+                notices on her behalf. He had expected to break down emotionally, but to his surprise, he faced the
+                situation with composure. “I just believed my mom would recover,” he said.
+                <br>
+                <br> Now in his third year,
+                <span class="people-Zhu people">Zhu Jingping </span>is a senior graduate student and demonstrates great
+                patience with his junior trainees.
+                <span>“Since our superiors can’t protect us, we students should stand together. If I don’t teach them,
+                    after I leave, they’ll get scolded, and who will help them then?</span>”
+            </p>
+        </div>
+    </section>
+    <!-- 第三章over -->
+
+    <!-- 第四章 值班室也会迎来清晨 -->
+    <section id="section5" class="section">
+        <div id="black-background2"></div>
+        <div id="cover-slide5" class="cover-slide-final fade-transition avatar-invisible-trigger">
+            <div id="cover-img5" class="cover-img"></div>
+            <img src="./image/transition_white2.png" alt="" id="transition">
+            <div id="black-background"></div>
+        </div>
+        <div id="content6" class="content content-light">
+            <p>
+                <span>Good systems never emerge on their own.</span> For Chinese doctors and medical students, a long
+                journey of exploration lies ahead—one that requires rethinking self-preservation, mutual support, and
+                driving systemic change toward a better future.
+                <br>
+                <br> Looking back at the inception of China’s residency training system,
+                <span class="people-Liu people">Liu Jin </span>Director of the Anesthesia Center at West China Hospital,
+                spent ten years (2003–2013) continuously submitting proposals to the National People’s Congress
+                advocating for its establishment.
+            </p>
+            <div id="treemap-slide">
+                <div id="treemap-chart" class="chart">
+                    <div class="chart-title chart-title-black">
+                        Distribution of Medical Institutions in China by Level
+                    </div>
+                    <div id="treemap-box">
+                        <div id="treemap-img1" class="treemap-img"></div>
+                        <div id="treemap-img2" class="treemap-img"></div>
+                        <div id="treemap-img3" class="treemap-img"></div>
+                    </div>
+                    <div class="data-source" id="institution-data-source" style="top: 115%;">
+                        <p>
+                            Data Source: 2022 Statistical Bulletin on China’s Health Development
+                        </p>
+                    </div>
+                </div>
+                <div id="treemap-text-box">
+                    <div id="treemap-text1" class="treemap-text">
+                        <p>According to the 2022 Statistical Bulletin on China’s Health Development published by the
+                            National Health Commission, as of 2022, China had a total of 36,900 hospitals. </p>
+                    </div>
+                    <div id="treemap-text2" class="treemap-text">
+                        <p>
+                            Only 1,716 of them were tertiary hospitals, accounting for less than 5% of all hospitals.
+                        </p>
+                    </div>
+                    <div id="treemap-text3" class="treemap-text">
+                        <p>Focusing on the disparity between the number of hospitals and primary healthcare institutions
+                            makes the concentration of medical resources at the “pyramid’s apex” even more evident. </p>
+                    </div>
+                    <div id="treemap-text4" class="treemap-text">
+                        <p>Among China’s 1.03 million medical institutions, 97.97 million are primary healthcare
+                            institutions.</p>
+                    </div>
+                    <div id="treemap-text5">
+                        <p><span>Proportionally, primary healthcare institutions represent the fastest and most
+                                accessible source of care for the public in case of everyday health
+                                concerns.</span> If medical resources fail to reach these institutions, it poses a
+                            significant risk to the general population in China.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <p>
+                Thus, <span>the goal of establishing a residency training system in China was to ensure that more
+                    ordinary citizens could encounter “reliable” doctors.</span>。
+                <br>
+                <br> A decade later, Yu Jingjin, Executive Vice President and Secretary-General of the Chinese Medical
+                Doctor Association, stated in an interview with Sanlian Lifeweek magazine that the
+                <span>residency training system has played a significant role in homogenizing the quality of healthcare
+                    across the country</span>. According to statistics from the Health Bureau of Fenggang County, Zunyi
+                City, Guizhou Province, after the first batch of general practitioners trained under the “5+3” program
+                started working, the number of inpatients at township hospitals doubled, outpatient visits nearly
+                doubled, and staff performance income increased as well.
+                <br>
+                <br>
+                <span class="people-Liu people">Liu
+                    Jin</span> once used an analogy to explain the necessity of residency training: “The training base
+                is like a shooting range; resident doctors are like bullets. A rigorous training system is the gun, and
+                the hospital leaders, department heads, and base instructors are the shooters—they decide where the
+                bullets are aimed.”
+                <br>
+                <br>
+                <span>Change is happening.</span>
+                <br>
+                <br>
+                In September 2020, the General Office of the State Council issued the Guidelines for Accelerating
+                Innovation and Development in Medical Education, reiterating the importance of improving the residency
+                training system. It proposed that training bases consider factors such as economic development, price
+                changes, and local urban employees’ average wages to formulate compensation standards for trainees.
+                Following this directive,
+                <span>many local governments increased financial support for residency trainees</span>.
+                Data from the platform GupeiBao shows that the average annual salary for social residents and sponsored
+                residents in China is 83,300 yuan, which is often higher than the local average wage.
+            </p>
+            <div class="chart" id="chart-income">
+                <div id="income-hospital" class="chart">
+                    <div class="iframe-container">
+                        <iframe src='https://flo.uri.sh/visualisation/18299540/embed' title=''
+                            class='flourish-embed-iframe' frameborder='0' scrolling='no'
+                            style='width:100%;height:600px;'
+                            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+                    </div>
+                    <div class="iframe-container">
+                        <iframe src='https://flo.uri.sh/visualisation/18045502/embed' title=''
+                            class='flourish-embed-iframe' frameborder='0' scrolling='no'
+                            style='width:100%;height:600px;'
+                            sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+                    </div>
+                    <div class="data-source" id="guipeibao-info">
+                        <p>
+                            Notes:
+                            1. The gray line in the right chart indicates the average annual income for social and
+                            sponsored residents in China.
+
+                            <br>2. Data from Hong Kong, Macao, Taiwan, Tibet, Qinghai, Inner Mongolia, and Ningxia
+                            regions are not included.
+                            <br>3. Data as of April 21, 2024.
+                        </p>
+                    </div>
+                </div>
+                <div class="hint" id="hint5">
+                    （Hover for detailed information▶）
+                </div>
+            </div>
+
+            <p style="margin-top: 100px;">
+                However, as a significant part of the residency training system, the salaries of specialized master’s
+                residents remain largely undisclosed. Residency training bases need not only to significantly improve
+                the treatment of trainees but also to make the salary structures for all trainees more open,
+                transparent, and accessible.
+                <br>
+                <br> In August 2022, Peking University People’s Hospital became the first institution in China to
+                implement a “equal pay for equal work” policy,
+                <span> offering the same pay for residents and full-time doctors. This marked the first case of such
+                    parity nationwide</span>. In the same month, the hospital released its annual recruitment brochure,
+                stating that in addition to base pay and bonuses, residency doctors could share in departmental
+                performance rewards, “bringing the total to the same level as that of attending physicians in the
+                department for the same year.” <br>
+                <br> Beyond compensation, the question remains: how can the residency system ensure that trainees truly
+                learn something new?
+                <br>
+                <br>
+                A teaching supervisor from a well-known tertiary hospital in a southern provincial capital admitted in
+                an interview with Sanlian Lifeweek that a training system genuinely centered on education is challenging
+                to implement. “We often talk about ‘medicine, teaching, and research,’ with medical work coming first
+                and teaching second. But in reality, most hospitals prioritize ‘research, medicine, and teaching.’ Why?
+                Because research helps hospitals secure more resources and achieve higher rankings, and medical services
+                keep hospitals financially sustainable. But what does teaching bring?”
+                <br>
+                <br>
+                The question of who holds the authority in residency training is a key issue in the system’s top-level
+                design, determining its direction and ultimate success or failure. A 2015 State Council document
+                explicitly stated the need to “establish administrative measures for industry organizations to take on
+                professional qualification evaluation and recognition, and to advance such work through industry
+                associations and similar organizations.”
+                <br>
+                <br> Based on this, some scholars have argued in the article “Challenges and Directions for Residency
+                Training in China: Insights from the U.S.” that
+                <span>China should reallocate the authority over the residency training system, giving more
+                    responsibility to industry associations and other non-governmental organizations</span>.
+                “China could consider borrowing from the U.S. model by establishing a non-governmental management and
+                organizational body for residency training, jointly formed by organizations like medical societies,
+                physician associations, and hospital management associations, with observers from the National Health
+                Commission and representatives of residents and the public. Such an institutional setup would minimize
+                the inefficiencies and lack of expertise often associated with government-led management while aligning
+                with the State Council’s policy directives.”
+                <br>
+                <br> Faced with the enormity of the “system,” individual capacity and time seem insignificant and
+                fleeting. As a result, most medical students adopt the mindset of “just getting through it” early on
+                during their three years of residency. But they are all acutely aware that their medical careers have
+                not even begun.
+                <span>When they cross the critical finish line of residency training and raise their arms in triumph,
+                    another shot is fired—marking the start of a new marathon.</span>
+                <br>
+                <br>
+                <br>
+                <br>
+            </p>
+        </div>
+    </section>
+    <!-- 第四章over -->
+
+    <!-- footer -->
+    <section id="section6" class="section avatar-invisible-trigger">
+        <div id="ending">
+            <div id="ending-content">
+                <div id="team">
+                    <p class="ending-title">Team Members</p>
+                    <p>
+                        Interview: Yangzhuoling Long, Guanqiu Lu, Yueyang Tang, Zihan Liu
+                        <br> Writing: Guanqiu Lu
+                        <br> Data Analysis and Visualization: Wenyue Huang, Zihan Liu, Yueyang Tang
+                        <br> Art Design: Zihan Liu, Yangzhuoling Long
+                        <br> Web Development: Yueyang Tang
+                        <br> Translation: Yueyang Tang
+                        <br>
+                        <br>
+                    </p>
+                    <p class="ending-title">Portfolio Supervisor</p>
+                    <p>
+                        Yu Dai, Ping Liu
+                    </p>
+                </div>
+                <div id="reference">
+                    <p>
+                        Reference
+                        <br> 1. 三联生活周刊.省医院25岁规培生自杀背后：变形的制度与“廉价”劳动力. https://mp.weixin.qq.com/s/qLNYw2G8IXakQ3t5q-bi3A
+                        <br> 2. Chen, L., Zhao, Z., Wang, Z. et al. Prevalence and risk factors for depression among
+                        training physicians in China and the United States. Sci Rep 12, 8170 (2022).
+                        <br> 3. 朱小艳,谢明萱,祖雄兵,等.“双轨合一”培训模式下住院医师的抑郁症状和知觉压力[J].中南大学学报(医学版),2020,45(12):1450-1456.
+                        <br> 4. 医学青年就业帮.温习：世界各国医学生誓言.https://mp.weixin.qq.com/s/mHXB4Vj2IbAqgq3LKAJQoA
+                        <br> 5. 胡婷. 建国以来医患报道中的医生媒介形象研究[D].华中师范大学,2023.
+                        <br> 6. 余成普,宗铮.过渡期的职业社会化：规培生职业互动中的边缘与冲突[J].社会学研究,2023,38(03):45-67+227.
+                        <br> 7.
+                        上观新闻.规培生的一天：他们最焦虑什么.https://www.shobserver.com/staticsg/res/html/web/newsDetail.html?id=735839&v=1.3&sid=67
+                        <br> 8. 余成普.管辖权边界的流动：国家、专业与医生分工体系[J].社会学研究,2021,36(05):158-179+229.
+                        <br> 9. 看理想.她们为什么自杀？https://mp.weixin.qq.com/s/PTuNygRWihdJpuKpVfRxzQ
+                        <br> 10. 丁香园.规培生的生存现状：超半数表示未被尊重，不同类型规培待遇差距大.https://zhuanlan.zhihu.com/p/139448698
+                        <br> 11. 界面新闻.“住院医师规培制度第一人”回应规培之问.https://mp.weixin.qq.com/s/1PxQNSJrjfsFuQVRF7tVZQ
+                        <br> 12.
+                        图数室.图数Pro丨中国医生薪酬待遇调查.https://weibo.com/ttarticle/p/show?id=2309404935360156402240&mark_id=999_reallog_mark_ad%3A999%7CWeiboADNatural
+                        <br> 13. 人物.「孩子们对人生一无所知，到底要怎么做呢？」https://mp.weixin.qq.com/s/bpWw1CEFpw3u-OHq108UPQ
+                        <br> 14. 三联生活周刊.争议下“规培”的十年：成为一个好医生，要经历什么？https://mp.weixin.qq.com/s/lrz-vDd-zIhgK2hu5A6Iug
+                        <br> 15. 人民日报图文数据库.http://data.people.com.cn/rmrb/20240621/1?code=2.
+                        <br> 16. 崔永,王天佑.从美国住院医生培训看中国住院医师规范化培训的挑战和方向[J].中国肺癌杂志,2016,19(06):321-327.
+                        <br> 17. 第一财经.重压下的医学生频频崩溃，“规培”制度有解吗？https://mp.weixin.qq.com/s/q95lCe0yiSVamgzrgNhxQQ
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="./js/main.js"></script>
+    <script src="./js/script_whole.js"></script>
+    <script src="./js/nightmare.js"></script>
+    <script src="./js/ratio.js"></script>
+    <script src="./js/oneday.js"></script>
+</body>
+
+</html>
