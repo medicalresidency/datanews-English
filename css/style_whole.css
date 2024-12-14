@@ -1,0 +1,521 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 32000px;
+    background-color: #112030;
+    font-size: 22px;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+p {
+    font-family: 'Siyuan-regular';
+    color: #FFFFFE;
+}
+
+@font-face {
+    font-family: 'Siyuan-bold';
+    src: url('../font/Times-New-Roman-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Siyuan-regular';
+    src: url('../font/Times-New-Roman.ttf');
+}
+
+@font-face {
+    font-family: 'impact';
+    src: url('../font/Impact.ttf');
+}
+
+/* @font-face {
+    font-family: 'Kai';
+    src: url('../font/Kai.ttf');
+} */
+
+
+/* cover */
+
+.cover-slide {
+    width: 100%;
+    height: 200vh;
+    /* background-color: darkcyan; */
+    position: relative;
+    /* border: 3px dashed #112030; */
+    z-index: 21;
+    opacity: 0;
+}
+
+.cover-slide-show {
+    width: 100%;
+    height: 200vh;
+    /* background-color: darkcyan; */
+    position: relative;
+    /* border: 3px dashed #112030; */
+    z-index: 21;
+}
+
+.cover-slide-final {
+    width: 100%;
+    height: 200vh;
+    /* background-color: darkcyan; */
+    position: relative;
+    /* border: 3px dashed #112030; */
+    z-index: 1;
+    opacity: 0;
+}
+
+.cover-slide-fade-in {
+    opacity: 1;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100vh;
+    /* background-color: pink; */
+    position: sticky;
+    top: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100vh;
+}
+
+
+/* cover part over */
+
+#suicide-slide {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+}
+
+#door-slide {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 10%;
+    display: block;
+}
+
+#door-img {
+    width: auto;
+    height: 95vh;
+    margin: 0 10px;
+    position: sticky;
+    top: 5%;
+    /* background-color: purple; */
+    background-image: url('../image/door/close.png');
+}
+
+#text-slide {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    top: 0;
+    right: 5%;
+    box-sizing: border-box;
+}
+
+#text-introduction {
+    width: 100%;
+    height: auto;
+    /* background-color: purple; */
+}
+
+#text-introduction p {
+    font-size: 30px;
+    padding: 5px 10px;
+    margin: 0 0 0 30px;
+    color: #FFFFFE;
+    font-family: 'Siyuan-regular';
+}
+
+.introduction {
+    opacity: 0;
+}
+
+#phone {
+    width: 100%;
+    height: 60vh;
+    /* background-color: brown; */
+    background-image: url('../image/phone/phone-white-2.png');
+    background-size: contain;
+    opacity: 0;
+}
+
+.content {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1% 6%;
+    color: #FFFFFE;
+    font-size: 1.05em;
+    line-height: 1.75em;
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    top: 0;
+    border-radius: 5px;
+    box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0px);
+    background-color: rgba(255, 255, 255, 0.05);
+    z-index: 10;
+}
+
+.content p {
+    text-align: justify;
+}
+
+.content span {
+    background-color: #c37373;
+    padding: 0 2px;
+    font-family: 'Siyuan-bold';
+}
+
+.chart {
+    width: 100%;
+    height: 60vh;
+    margin: 50px auto;
+    /* background-color: darkslateblue; */
+    /* border: #EEE1c3 dashed 3px; */
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+    align-items: center;
+}
+
+#chart-income {
+    height: max-content;
+    margin-top: 100px;
+}
+
+.chart-title {
+    position: absolute;
+    top: -20px;
+    font-size: 28px;
+    font-family: 'impact';
+    width: 100%;
+    text-align: center;
+}
+
+.chart-title-black {
+    color: #000000;
+}
+
+.hint {
+    /* background-color: pink; */
+    writing-mode: vertical-lr;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 30%;
+    left: -5%;
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    animation: moveUpDown 3s infinite ease-in-out;
+    z-index: 0;
+    width: max-content;
+}
+
+#hint4 {
+    left: 5%;
+    top: 10vh;
+    height: max-content;
+}
+
+#hint5 {
+    color: #000000;
+}
+
+@keyframes moveUpDown {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.data-source {
+    /* background-color: blueviolet; */
+    position: absolute;
+    top: 105%;
+    right: 0;
+    width: 50%;
+    font-size: 0.5em;
+    line-height: 1em;
+    height: max-content;
+}
+
+.data-source p {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#wordcloud-info {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    width: 70%;
+    top: 105%;
+    right: 7%;
+    text-align: justify;
+}
+
+#doctor-number-info {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    width: 70%;
+    top: 90%;
+}
+
+#doctor-number-img-data-source {
+    top: 105%;
+}
+
+.content-light {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.content-light span {
+    background-color: #EEE1c3;
+}
+
+.content-light p {
+    color: #000000;
+}
+
+#guipeibao-info {
+    font-size: 0.75em;
+    line-height: 1.5em;
+    width: 50%;
+    top: 95%;
+}
+
+#guipeibao-info p,
+#institution-data-source p {
+    color: gray;
+}
+
+#section5 {
+    background-color: #FFFFFE;
+    position: relative;
+}
+
+.fade-transition {
+    transition: all 0.5s ease-in-out;
+}
+
+
+/* 提示框 */
+
+span.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 5px dotted #C37373;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    font-family: 'Siyuan-regular';
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: rgba(2, 14, 34, 0.8);
+    ;
+    color: #fff;
+    font-family: 'Siyuan-regular';
+    font-size: 0.75em;
+    line-height: 1.5em;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 30%;
+    margin-left: -60px;
+    text-align: justify;
+    /* 左对齐 */
+    word-break: break-word;
+    /* 打破单词换行 */
+    hyphens: auto;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(2, 14, 34, 0.8) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+span.tooltip:hover {
+    color: #C37373;
+    font-family: 'Siyuan-bold';
+}
+
+
+/* 人物介绍 */
+
+.avatar-container {
+    position: fixed;
+    right: 5%;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    z-index: 20;
+}
+
+.avatar {
+    position: relative;
+    margin: -5px 0;
+    cursor: pointer;
+}
+
+.avatar img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.3;
+}
+
+.avatar:hover img {
+    opacity: 1;
+    transform: scale(130%);
+    filter: invert(45%) sepia(70%) saturate(200%) hue-rotate(-50deg) brightness(120%);
+}
+
+.avatar::after {
+    content: attr(data-tooltip);
+    width: 250px;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    background-color: rgba(2, 14, 34, 0.8);
+    color: #fff;
+    font-family: 'Siyuan-regular';
+    font-size: 0.75em;
+    line-height: 1.5em;
+    border-radius: 6px;
+    padding: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    text-align: justify;
+    /* 左对齐 */
+    word-break: break-word;
+    /* 打破单词换行 */
+    hyphens: auto;
+}
+
+.avatar:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-10px);
+}
+
+.avatar img.visible {
+    opacity: 1 !important;
+    filter: invert(45%) sepia(70%) saturate(200%) hue-rotate(-50deg) brightness(120%);
+    transform: scale(130%);
+}
+
+span.people {
+    background-color: transparent;
+    font-family: 'Siyuan-regular';
+    padding: 0;
+}
+
+.avatar img.light-theme {
+    filter: invert(100%);
+}
+
+.avatar:hover img.light-theme {
+    opacity: 1 !important;
+    filter: invert(100%) hue-rotate(120deg);
+    transform: scale(130%);
+}
+
+.avatar img.visible.light-theme {
+    opacity: 1 !important;
+    filter: invert(100%) hue-rotate(120deg);
+    transform: scale(130%);
+}
+
+.avatar-container.avatar-invisible {
+    right: -7%;
+}
+
+#hint-avatar {
+    /* background-color: #C37373; */
+    writing-mode: vertical-rl;
+    position: fixed;
+    top: 20vh;
+    right: 10%;
+    font-size: 0.7em;
+    width: 100%;
+    text-align: center;
+    animation: moveUpDown 3s infinite ease-in-out;
+    z-index: 20;
+    opacity: 0;
+    display: block;
+    transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+}
+
+#hint-avatar.show-up {
+    opacity: 1;
+    top: 15vh;
+}
+
+#hint-avatar.delete {
+    display: none !important;
+}
+
+span.quote {
+    padding: 0;
+    background-color: transparent;
+    font-family: "Siyuan-regular";
+}
+
+
+/* 媒体查询 */
+
+@media (max-width: 768px) {
+
+    #navigation,
+    #hint-avatar,
+    .avatar-container {
+        display: none;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+
+    #navigation,
+    #hint-avatar,
+    .avatar-container {
+        display: block;
+    }
+
+    .content {
+        width: 60%;
+    }
+}

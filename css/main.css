@@ -1,0 +1,888 @@
+/* 导航栏样式 */
+
+.navigation {
+    position: fixed;
+    bottom: 30px;
+    left: 20px;
+    color: #FFFFFE;
+    z-index: 15;
+}
+
+.progressLine {
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    left: 5px;
+    top: 13px;
+}
+
+.progressLine__fill {
+    position: absolute;
+    width: 1px;
+    height: 0;
+    background: #112030;
+    transition: height 0.6s ease-in-out;
+    transform-origin: top;
+}
+
+.nav-item {
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.4s, font-size 0.4s;
+    font-size: 0.5em;
+    opacity: 0.5;
+}
+
+.nav-item:last-child {
+    margin-bottom: 0;
+}
+
+.nav-item::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    margin-right: 10px;
+    background: #112030;
+    position: relative;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    font-size: 0.7em;
+    opacity: 1;
+}
+
+.nav-item.active::before,
+.nav-item:hover::before {
+    background: #FFFFFE;
+    transform: scale(1.2);
+    transition: all 0.4s ease-in-out;
+}
+
+.section {
+    height: max-content;
+    box-sizing: border-box;
+    position: relative;
+    /* border-bottom: 10px solid #ccc; */
+}
+
+.light-theme::before {
+    background: #000000 !important;
+}
+
+.dark-theme::before {
+    background: #FFFFFE !important;
+}
+
+
+/* 导航栏结束 */
+
+
+/* cover1 规培生之困 */
+
+#cover-slide1 {
+    position: relative;
+    z-index: 21;
+}
+
+#cover-img1 {
+    background-image: url('../image/poster_main.png');
+    z-index: 21;
+}
+
+
+/* 这不是2024唯一的规培生自杀事件 */
+
+.pinned {
+    width: 100%;
+    height: auto;
+    position: sticky;
+    top: 30%;
+    justify-content: center;
+}
+
+.pinned p {
+    text-align: center;
+    font-size: 30px;
+    padding: 5px 10px;
+    margin: 0 0 0 30px;
+    color: #FFFFFE;
+    font-family: 'Siyuan-regular';
+}
+
+#pinned1 {
+    position: relative;
+    top: 50px;
+    opacity: 0;
+}
+
+.illustration {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+}
+
+#suicide-news {
+    position: relative;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#suicide-news-text {
+    position: relative;
+    top: 50px;
+}
+
+
+/* 规培名词解释 */
+
+#resident-explanation {
+    width: 100%;
+    height: 300px;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resident-type {
+    width: 33%;
+    height: 100%;
+    /* background-color: aqua; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.resident-type:hover {
+    transform: translateY(-20px);
+    /* box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4); */
+}
+
+#resident1 {
+    background-image: url('../image/resident-type/type1.png');
+}
+
+#resident2 {
+    background-image: url('../image/resident-type/type3.png');
+}
+
+#resident3 {
+    background-image: url('../image/resident-type/type2.png');
+}
+
+
+/* 抑郁 */
+
+#double_pie_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: auto;
+}
+
+#initialChartContainer {
+    width: 50%;
+    height: 100%;
+    /* 控制初始饼图的宽度 */
+    min-width: 300px;
+    /* 设置最小宽度 */
+    aspect-ratio: 1;
+    /* 保持比例 */
+    display: flex;
+    position: absolute;
+    left: 25%;
+    transition: all 0.3s ease-in-out;
+}
+
+#initialChartContainer.move-left {
+    left: 10%;
+}
+
+#detailedChartContainer {
+    /* background-color: cadetblue; */
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    top: 10%;
+    right: 0;
+    min-width: 150px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#detailedChartContainer.active {
+    display: flex;
+    opacity: 1;
+}
+
+#detailedChartContainer.fade-out {
+    opacity: 0;
+}
+
+canvas #detailedChart {
+    width: 100%;
+    height: auto;
+}
+
+
+/* 收入 */
+
+#double_chart_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: auto;
+}
+
+#initialChartContainer1 {
+    width: 51%;
+    height: 100%;
+    /* 控制初始饼图的宽度 */
+    min-width: 300px;
+    /* 设置最小宽度 */
+    aspect-ratio: 1;
+    /* 保持比例 */
+    display: flex;
+    position: absolute;
+    left: 25%;
+    top: 5%;
+    transition: all 0.3s ease-in-out;
+    z-index: 20;
+}
+
+#initialChartContainer1.move-left {
+    left: 10%;
+}
+
+#detailedChartContainer1 {
+    position: absolute;
+    width: 35%;
+    height: 70%;
+    top: 20%;
+    right: -8%;
+    min-width: 150px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#detailedChartContainer1.active {
+    display: flex;
+    opacity: 1;
+}
+
+#detailedChartContainer1.fade-out {
+    opacity: 0;
+    /* 渐隐效果 */
+}
+
+#detailedChart2 {
+    width: 100%;
+    height: auto;
+}
+
+
+/* cover2 誓言下的自刎 */
+
+#cover-slide2 {
+    height: 150vh;
+    position: relative;
+    z-index: 21;
+}
+
+#cover-img2 {
+    background-image: url('../image/poster_1.png');
+    z-index: 21;
+}
+
+#promise {
+    box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    padding-left: 5px;
+    border-left: #FFFFFE 8px solid;
+}
+
+
+/* 剪报 */
+
+#content2 {
+    position: relative;
+    z-index: 1;
+}
+
+#newspaper-background {
+    /* background-color: pink; */
+    width: 100%;
+    height: max-content;
+    position: absolute;
+    top: 180vh;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#newspaper-background img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    filter: grayscale(80%) brightness(1) opacity(0.8);
+    /* filter: invert(0.7) sepia(1) hue-rotate(150deg) saturate(0.6) brightness(1) opacity(0.5); */
+}
+
+
+/* 词云图 */
+
+#wordcloud {
+    width: 100%;
+    height: 350px;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.wordcloud-container {
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wordcloud-img {
+    width: 100%;
+    height: 80%;
+    /* background-color: aqua; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.wordcloud-img:hover {
+    transform: translateY(-20px);
+    /* box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4); */
+}
+
+#wordcloud-img1 {
+    background-image: url('../image/word_cloud/Ellipse\ 1.png');
+}
+
+#wordcloud-img2 {
+    background-image: url('../image/word_cloud/Ellipse\ 2.png');
+}
+
+#wordcloud-img3 {
+    background-image: url('../image/word_cloud/Ellipse\ 3.png');
+}
+
+.wordcloud-text {
+    /* margin-top: 2%; */
+    position: relative;
+    top: 100%;
+    left: 35%;
+    font-family: "Siyuan-bold";
+}
+
+
+/* 
+.wordcloud-text {
+  top: 60%;
+  /* width: max-content;
+  padding: 2px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  background-color: rgba(255, 255, 255, 0.05); 
+  font-family: "Siyuan-bold";
+} */
+
+
+/* 成为医生的路径 */
+
+#how-to-be-a-doctor {
+    width: 100%;
+    height: auto;
+}
+
+#how-to-be-a-doctor img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* cover3 我是学生，还是医生*/
+
+#cover-slide3 {
+    height: 150vh;
+    position: relative;
+    z-index: 21;
+}
+
+#cover-img3 {
+    background-image: url('../image/poster_2.png');
+    z-index: 21;
+}
+
+
+/* 收入 */
+
+#income-box {
+    width: 100%;
+    height: 60vh;
+    /* background-color: brown; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.income {
+    height: 100%;
+    /* background-color: aqua; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+#income1 {
+    width: 70%;
+}
+
+#income2 {
+    width: 25%;
+}
+
+#income-hospital {
+    height: max-content;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.iframe-container {
+    width: 50%;
+    position: relative;
+}
+
+#doctor-number-img {
+    width: 100%;
+    height: 40vh;
+}
+
+
+/* cover4 明日复明日 */
+
+#cover-slide4 {
+    height: 150vh;
+    position: relative;
+    z-index: 21;
+}
+
+#cover-img4 {
+    background-image: url('../image/poster_3.png');
+    z-index: 21;
+}
+
+#content4 {
+    margin-bottom: 60px;
+}
+
+#oneday {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#oneday.fade-in {
+    opacity: 1;
+}
+
+#oneday-text {
+    margin: 0;
+    padding-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-family: "Siyuan-bold";
+}
+
+#oneday-chart {
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    bottom: 0;
+    font-family: "Dosis", Helvetica, Arial, sans-serif;
+    text-shadow: white 1px 1px 1px;
+    display: center;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#hint4 {
+    bottom: 20%;
+    right: 10%;
+    color: white;
+    font-size: 0.7em;
+}
+
+
+/* 噩梦 */
+
+#nightmare-slide {
+    position: relative;
+    top: 20vh;
+    width: 100%;
+    height: 3000px;
+    z-index: 1;
+}
+
+#nightmare-slide p {
+    font-size: 26px;
+    padding: 10px 20px;
+    margin: 100px auto;
+    width: max-content;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+    z-index: 20;
+    position: sticky;
+    top: 10%;
+    box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nightmare-text {
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.nightmare-text.fade-in {
+    opacity: 1;
+}
+
+#nightmare-textbox {
+    /* background-color: blueviolet; */
+    height: max-content;
+    z-index: 2;
+    position: relative;
+}
+
+#nightmare {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+#nightmare video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+    opacity: 0.99;
+}
+
+
+/* choice */
+
+.choice-text {
+    font-size: 26px;
+    padding: 10px 20px;
+    margin: 30vh auto;
+    width: 60%;
+    border-radius: 10px;
+    z-index: 10;
+    text-align: center;
+    z-index: 20;
+    position: sticky;
+    top: -50%;
+    text-align: justify;
+    box-shadow: 0 0.3px 0.7px rgba(255, 255, 255, 0.126), 0 0.9px 1.7px rgba(0, 0, 0, 0.179), 0 1.8px 3.5px rgba(0, 0, 0, 0.224), 0 3.7px 7.3px rgba(0, 0, 0, 0.277), 0 10px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.05);
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.choice-text.fade-in {
+    opacity: 1;
+}
+
+.choice-text span {
+    background-color: rgba(195, 115, 115, 0.7);
+}
+
+#choice-textbox {
+    /* background-color: aqua; */
+    position: absolute;
+    top: 40vh;
+}
+
+.quote-name {
+    text-align: right;
+}
+
+#choice-img-slide {
+    height: 400vh;
+    width: 100%;
+    position: relative;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#choice-img-slide.fade-in {
+    opacity: 1;
+}
+
+#choice-img {
+    position: sticky;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100vh;
+    background-image: url('../image/stair/stair.png');
+}
+
+.stair {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100vh;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#stair1 {
+    background-image: url('../image/stair/door1.png');
+}
+
+#stair2 {
+    background-image: url('../image/stair/door2.png');
+}
+
+#stair3 {
+    background-image: url('../image/stair/door3.png');
+}
+
+#stair4 {
+    background-image: url('../image/stair/stair-all.png');
+}
+
+.stair.fade-in {
+    opacity: 1;
+}
+
+
+/* cover5 值班室会迎来清晨*/
+
+#black-background2 {
+    width: 100%;
+    height: 100vh;
+    background-color: #112030;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    position: absolute;
+    top: -10px;
+    z-index: 0;
+}
+
+#cover-slide5 {
+    height: 150vh;
+    margin-bottom: 100px;
+    z-index: 21;
+    position: relative;
+}
+
+#cover-img5 {
+    background-image: url('../image/poster_4.png');
+    z-index: 21;
+}
+
+#transition {
+    position: absolute;
+    bottom: -100px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 101;
+}
+
+#black-background {
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: -80px;
+    background-color: #112030;
+}
+
+/* treemap */
+#treemap-slide {
+    margin: 50px auto;
+    width: 120%;
+    position: relative;
+    right: 10%;
+    height: 1800px;
+    /* background-color: paleturquoise; */
+    display: flex;
+}
+
+#treemap-chart {
+    position: sticky;
+    top: 20%;
+    left: 50%;
+    width: 50%;
+    height: 400px;
+}
+
+#treemap-text-box {
+    width: 40%;
+    position: absolute;
+    left: 5%;
+    top: 400px
+}
+
+.treemap-text {
+    margin-bottom: 150px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.treemap-text.fade-in {
+    opacity: 1;
+}
+
+
+#treemap-text5 {
+    margin-bottom: 100px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+#treemap-text5.fade-in {
+    opacity: 1;
+}
+
+#treemap-box {
+    position: relative;
+    top: 15%;
+    display: flex;
+    height: 100%;
+}
+
+.treemap-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    transition: all 0.2s ease-in-out;
+    opacity: 0;
+}
+
+.treemap-img.fade-in {
+    opacity: 1;
+}
+
+#treemap-img1 {
+    background-image: url('../image/treemap/1.png');
+}
+
+#treemap-img2 {
+    background-image: url('../image/treemap/2.png');
+}
+
+#treemap-img3 {
+    background-image: url('../image/treemap/3.png');
+}
+
+
+
+/* 尾部 */
+
+#ending {
+    width: 100%;
+    height: max-content;
+    background: rgb(255, 255, 254);
+    background: linear-gradient(180deg, rgba(255, 255, 254, 1) 33%, rgba(252, 233, 188, 1) 100%);
+}
+
+#ending-content {
+    width: 60%;
+    height: max-content;
+    margin: 0 auto;
+    padding: 1% 6%;
+    font-size: 1em;
+    line-height: 2em;
+    text-align: center;
+}
+
+#team {
+    margin: 100px auto;
+}
+
+#team p {
+    color: #000000;
+}
+
+.ending-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px auto;
+    font-family: 'impact';
+}
+
+#reference {
+    height: 400px;
+    display: flex;
+    overflow: scroll;
+    text-align: left;
+    margin-left: 70px;
+    margin-bottom: 100px;
+}
+
+#reference p {
+    color: gray;
+    font-size: 0.8em;
+    line-height: 1.6em;
+}
+
+span.people {
+    background-color: transparent;
+    font-family: 'Siyuan-regular';
+    padding: 0;
+}
